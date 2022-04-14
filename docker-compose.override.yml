@@ -1,0 +1,23 @@
+version: '3'
+services:
+  toplevel:
+    build:
+      context: .
+      x-bake:
+        tags:
+          - registry.lil.tools/harvardlil/bake-spike-toplevel:0.1-nohash
+        platforms:
+          - linux/amd64
+          - linux/arm64
+  subdir:
+    build:
+      context: subdir
+      x-bake:
+        tags:
+          - registry.lil.tools/harvardlil/bake-spike-subdir:0.1-nohash
+        platforms:
+          - linux/amd64
+          - linux/arm64
+      x-hash-files:
+        - foo
+        - bar

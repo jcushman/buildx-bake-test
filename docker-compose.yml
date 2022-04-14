@@ -1,0 +1,6 @@
+version: '3'
+services:
+  toplevel:
+    image: registry.lil.tools/harvardlil/bake-spike-toplevel:0.1-nohash
+  subdir:
+    image: registry.lil.tools/harvardlil/bake-spike-subdir:0.1-nohash
